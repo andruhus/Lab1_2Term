@@ -14,6 +14,12 @@ struct Vector{
 };
 
 class Triangle {
+private:
+    Point a,b,c;
+    float dist_between_points(Point a,Point b);
+public:
+    void get_points();
+    void get_angle();
 
 };
 
