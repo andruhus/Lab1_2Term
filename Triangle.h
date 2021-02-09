@@ -16,10 +16,15 @@ struct Vector{
 class Triangle {
 private:
     Point a,b,c;
+    float angle_to_turn;
     float dist_between_points(Point a,Point b);
-public:
     void get_points();
+public:
     void get_angle();
+    void set_triangle();
+
+public:
+    Point get_centroid();
 
 };
 

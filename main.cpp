@@ -1,26 +1,6 @@
 
+#include "Triangle.h"
 
-void vved(float& x1, float& y1, float& x2, float& y2, float& x3, float& y3, float& ang)
-{
-    // Three coordinants are being entered
-    cout << "Enter point A: ";
-    cin >> x1 >> y1;
-    cout << "Enter point B: ";
-    cin >> x2 >> y2;
-    cout << "Enter point C: ";
-    cin >> x3 >> y3;
-    cout << "Enter the Angle in gradus: ";
-    cin >> ang;
-
-
-    // Now turn the angle into radians and ang є [0, 2*pi]
-    float pi = atan(1) * 4.0;
-    ang = ang/180.0 * pi;
-    while (ang > 2.0 * pi)
-        ang -= 2.0 * pi;
-
-
-}
 
 
 void turn_right(float x[2], float ang)
