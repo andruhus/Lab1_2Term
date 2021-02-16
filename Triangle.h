@@ -14,6 +14,8 @@ class Vector{
 public:
     Vector(Point a, Point b);
     void turn_right(float ang);
+    Point get_first_point(Point another);
+    float get_len();
 };
 
 class Triangle {
@@ -29,7 +31,7 @@ public:
 public:
     Point get_centroid();
     void turn_right();
-
+    void print_outer_circle();
 };
 
 

@@ -56,7 +56,7 @@ Point Triangle::get_centroid() {
 }
 
 void Vector::turn_right(float ang) {
-    float length = sqrt((x * x) + (y * y));
+    float length = get_len();
     float vec_ang;
     float pi = atan(1) * 4.0;
 
@@ -80,18 +80,46 @@ void Vector::turn_right(float ang) {
 }
 
 void Triangle::turn_right() {
-    Vector ao(a,get_centroid());
-    Vector bo(b,get_centroid());
-    Vector co(c,get_centroid());
+    Point o = get_centroid();
+    Vector ao(a,o);
+    Vector bo(b,o);
+    Vector co(c,o);
 
     ao.turn_right(angle_to_turn);
     bo.turn_right(angle_to_turn);
     co.turn_right(angle_to_turn);
 
-
+    a = ao.get_first_point(o);
+    b = bo.get_first_point(o);
+    c = co.get_first_point(o);
 }
 
 Vector::Vector(Point a, Point b) {
     x = b.x - a.x;
     y = b.y - a.y;
+}
+
+Point Vector::get_first_point(Point another) {
+    Point res;
+    res.x = another.x - x;
+    res.y = another.y - y;
+    return res;
+}
+
+void Triangle::print_outer_circle() {
+    Point centroid = get_centroid();
+    Vector ao(a,centroid);
+    float radius = ao.get_len();
+    if (centroid.x >= 0 && centroid.y >= 0)
+        cout << "Our circle: (x - " << centroid.x << ")^2 + (y - " << centroid.y << ")^2 = " << radius * radius << endl;
+    else if (centroid.x < 0 && centroid.y >= 0)
+        cout << "Our circle: (x + " << abs(centroid.x) << ")^2 + (y - " << centroid.y << ")^2 = " << radius * radius << endl;
+    else if (centroid.x >= 0 && centroid.y < 0)
+        cout << "Our circle: (x - " << centroid.x << ")^2 + (y + " << abs(centroid.y) << ")^2 = " << radius * radius << endl;
+    else
+        cout << "Our circle: (x + " << abs(centroid.x) << ")^2 + (y + " << abs(centroid.y) << ")^2 = " << radius * radius << endl;
+}
+
+float Vector::get_len() {
+    return sqrt((x * x) + (y * y));
 }
