@@ -54,3 +54,44 @@ Point Triangle::get_centroid() {
     center.y /= 3.0;
     return center;
 }
+
+void Vector::turn_right(float ang) {
+    float length = sqrt((x * x) + (y * y));
+    float vec_ang;
+    float pi = atan(1) * 4.0;
+
+
+    if (abs(x) < 0.1)
+    {
+        if (y >= 0) vec_ang = pi / 2.0;
+        else vec_ang = 3.0 * pi / 2.0;
+        cout << vec_ang << endl;
+        vec_ang -= ang;
+        x = length * cos(vec_ang);
+        y = length * sin(vec_ang);
+        return;
+    }
+    if (x >= 0) vec_ang = atan(y / x);
+    else vec_ang = atan(y / x) + pi;
+
+    vec_ang -= ang;
+    x = length * cos(vec_ang);
+    y = length * sin(vec_ang);
+}
+
+void Triangle::turn_right() {
+    Vector ao(a,get_centroid());
+    Vector bo(b,get_centroid());
+    Vector co(c,get_centroid());
+
+    ao.turn_right(angle_to_turn);
+    bo.turn_right(angle_to_turn);
+    co.turn_right(angle_to_turn);
+
+
+}
+
+Vector::Vector(Point a, Point b) {
+    x = b.x - a.x;
+    y = b.y - a.y;
+}

@@ -9,8 +9,11 @@ struct Point{
     float x,y;
 };
 
-struct Vector{
+class Vector{
     float x,y;
+public:
+    Vector(Point a, Point b);
+    void turn_right(float ang);
 };
 
 class Triangle {
@@ -25,6 +28,7 @@ public:
 
 public:
     Point get_centroid();
+    void turn_right();
 
 };
 
