@@ -4,10 +4,10 @@
 
 #ifndef LAB1_2TERM_TRIANGLE_H
 #define LAB1_2TERM_TRIANGLE_H
-#include "Vector.h"
+#include "Figure.h"
 
 
-class Triangle {
+class Triangle : public Figure {
 private:
 
     float angle_to_turn;

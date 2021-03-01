@@ -4,9 +4,9 @@
 
 #ifndef LAB1_2TERM_RECTANGLE_H
 #define LAB1_2TERM_RECTANGLE_H
-#include "Vector.h"
+#include "Figure.h"
 
-class Rectangle {
+class Rectangle : public Figure {
 protected:
     Point a,b,c,d;
 
