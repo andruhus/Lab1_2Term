@@ -4,26 +4,13 @@
 
 #ifndef LAB1_2TERM_SQUARE_H
 #define LAB1_2TERM_SQUARE_H
-#include "Vector.h"
+#include "Rectangle.h"
 
-class Square {
-private:
-    Point a,b,c,d;
-
+class Square : public Rectangle {
 public:
-    double Area();
-
-    double Perimeter();
-
-    double get_len();
-
-    double get_wid();
-
-    Point get_centroid();
-
-    double diameter();
-
-    Square(Point a,Point b, Point c);
+    Square(Point a,Point b);
+    double get_outer_radius();
+    double get_inner_radius();
 };
 
 

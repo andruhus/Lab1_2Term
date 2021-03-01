@@ -4,7 +4,7 @@
 
 #ifndef LAB1_2TERM_VECTOR_H
 #define LAB1_2TERM_VECTOR_H
-
+#include <math.h>
 
 struct Point{
     double x = 0,y = 0;

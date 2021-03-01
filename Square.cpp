@@ -4,41 +4,20 @@
 
 #include "Square.h"
 
-double Square::Area() {
-    return get_len() * get_wid();
-}
-
-double Square::Perimeter() {
-    return 2 * get_len() + 2 * get_wid();
-}
-
-double Square::get_len() {
-    Vector len_vec(a,b);
-    return len_vec.get_len();
-}
-
-double Square::get_wid() {
-    Vector wid_vec(c,d);
-    return wid_vec.get_len();
-}
-
-Point Square::get_centroid() {
-    Point res;
-    res.x = (a.x+b.x+c.x+d.x)/4;
-    res.y = (a.y+b.y+c.y+d.y)/4;
-    return res;
-}
-
-double Square::diameter() {
-    Vector d(a,c);
-    return d.get_len();
-}
-
-Square::Square(Point pa, Point pb, Point pc) {
+Square::Square(Point pa, Point pb) {
     a = pa;
     b = pb;
-    c = pc;
     Vector ab(a,b);
-    d = ab.get_first_point(c);
+    double three_pi_over_two = 6 * atan(1);
+    ab.turn_right(three_pi_over_two);
+    d = ab.get_second_point(a);
+    c = ab.get_second_point(b);
+}
 
+double Square::get_inner_radius() {
+    return get_len()/2;
+}
+
+double Square::get_outer_radius() {
+    return get_len()*sqrt(2)/2
 }
