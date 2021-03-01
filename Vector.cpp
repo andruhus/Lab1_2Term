@@ -44,6 +44,13 @@ Point Vector::get_first_point(Point another) {
     return res;
 }
 
-float Vector::get_len() {
+double Vector::get_len() {
     return sqrt((x * x) + (y * y));
+}
+
+Point Vector::get_second_point(Point another) {
+    Point res;
+    res.x = another.x + x;
+    res.y = another.y + y;
+    return res;
 }

@@ -7,16 +7,17 @@
 
 
 struct Point{
-    float x,y;
+    double x,y;
 };
 
 class Vector{
-    float x,y;
+    double x,y;
 public:
     Vector(Point a, Point b);
-    void turn_right(float ang);
+    void turn_right(double ang);
     Point get_first_point(Point another);
-    float get_len();
+    Point get_second_point(Point another);
+    double get_len();
 };
 
 
