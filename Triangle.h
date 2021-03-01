@@ -9,18 +9,20 @@
 
 class Triangle {
 private:
-    Point a,b,c;
+
     float angle_to_turn;
-    float dist_between_points(Point a,Point b);
+
     void get_points();
+
+protected:
+    Point a,b,c;
 public:
     void get_angle();
     void set_triangle();
 
 public:
-    Point get_centroid();
+
     void turn_right();
-    void print_outer_circle();
 };
 
 
