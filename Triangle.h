@@ -4,19 +4,8 @@
 
 #ifndef LAB1_2TERM_TRIANGLE_H
 #define LAB1_2TERM_TRIANGLE_H
+#include "Vector.h"
 
-struct Point{
-    float x,y;
-};
-
-class Vector{
-    float x,y;
-public:
-    Vector(Point a, Point b);
-    void turn_right(float ang);
-    Point get_first_point(Point another);
-    float get_len();
-};
 
 class Triangle {
 private:
