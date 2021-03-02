@@ -39,6 +39,7 @@ void Triangle::print_coordinates() {
     cout << "A(" << a.x << "," << a.y << ") ";
     cout << "B(" << b.x << "," << b.y << ") ";
     cout << "C(" << c.x << "," << c.y << ") ";
+    cout << endl;
 }
 
 void Triangle::to_feature() {

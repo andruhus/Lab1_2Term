@@ -44,3 +44,10 @@ void Right_Triangle::to_feature() {
     cout << endl;
     Triangle::to_feature();
 }
+
+Right_Triangle::Right_Triangle() {
+    Point pa,pb,pc;
+    a = pa;
+    b = pb;
+    c = pc;
+}

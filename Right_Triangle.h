@@ -8,7 +8,7 @@
 
 class Right_Triangle : public Triangle {
 public:
-
+    Right_Triangle();
     Right_Triangle(Point pa,Point pb);
     Point get_centroid();
     void print_outer_circle();
