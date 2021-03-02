@@ -17,33 +17,6 @@ void Triangle::get_points() {
 
 
 
-void Triangle::set_triangle() {
-    float ab,ac,bc;
-    bool passed;
-    do{
-        get_points();
-        ab = dist_between_points(a,b);
-        ac = dist_between_points(a,c);
-        bc = dist_between_points(b,c);
-        passed = ab + bc <= ac || ab + ac <= bc || bc + ac <= ab;
-        if(passed){
-            cout << "The points form a line" << endl;
-        }
-    } while (passed);
-}
-
-void Triangle::get_angle() {
-    cout << "Enter the Angle in gradus: ";
-    cin >> angle_to_turn;
-
-    float pi = atan(1) * 4.0;
-    angle_to_turn = angle_to_turn/180.0 * pi;
-    while (angle_to_turn > 2.0 * pi)
-        angle_to_turn -= 2.0 * pi;
-}
-
-
-
 
 
 void Triangle::turn_right() {
@@ -62,5 +35,33 @@ void Triangle::turn_right() {
 }
 
 
+void Triangle::print_coordinates() {
+    cout << "A(" << a.x << "," << a.y << ") ";
+    cout << "B(" << b.x << "," << b.y << ") ";
+    cout << "C(" << c.x << "," << c.y << ") ";
+}
 
+void Triangle::to_feature() {
+    cout << "Coordinates before turning right:" << endl;
+    print_coordinates();
+    cout << "Coordinates after turning right:" << endl;
+    turn_right();
+    print_coordinates();
+}
 
+Triangle::Triangle(Point pa, Point pb, Point pc) {
+    a = pa;
+    b = pb;
+    c = pc;
+}
+
+void Triangle::set_angle(double ang) {
+    angle_to_turn = ang;
+}
+
+Triangle::Triangle() {
+    Point a1,b1,c1;
+    a = a1;
+    b = b1;
+    c = c1;
+}

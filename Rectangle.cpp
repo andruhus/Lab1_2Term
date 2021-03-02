@@ -3,6 +3,7 @@
 //
 
 #include "Rectangle.h"
+
 double Rectangle::Area() {
     return get_len() * get_wid();
 }
@@ -40,4 +41,18 @@ Rectangle::Rectangle(Point pa, Point pb, Point pc) {
     Vector ab(a,b);
     d = ab.get_first_point(c);
 
+}
+
+void Rectangle::to_feature() {
+    cout << "The area of the rectangle: " << Area() << endl;
+    cout << "The perimeter of the rectangle: " << Perimeter() << endl;
+    cout << "The centroid is located at point O(" << get_centroid().x << "," << get_centroid().y << ")" << endl;
+}
+
+Rectangle::Rectangle() {
+    Point a1,b1,c1,d1;
+    a = a1;
+    b = b1;
+    c = c1;
+    d = d1;
 }

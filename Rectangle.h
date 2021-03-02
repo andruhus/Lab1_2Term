@@ -23,7 +23,11 @@ public:
 
     double diameter();
 
+    Rectangle();
+
     Rectangle(Point a,Point b, Point c);
+
+    void to_feature();
 };
 
 

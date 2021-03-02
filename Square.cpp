@@ -19,5 +19,11 @@ double Square::get_inner_radius() {
 }
 
 double Square::get_outer_radius() {
-    return get_len()*sqrt(2)/2
+    return get_len()*sqrt(2)/2;
+}
+
+void Square::to_feature() {
+    Rectangle::to_feature();
+    cout << "Inner circle radius: " << get_inner_radius() << endl;
+    cout << "Outer circle radius: " << get_outer_radius() << endl;
 }

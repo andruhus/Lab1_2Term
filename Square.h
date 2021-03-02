@@ -11,6 +11,7 @@ public:
     Square(Point a,Point b);
     double get_outer_radius();
     double get_inner_radius();
+    void to_feature();
 };
 
 

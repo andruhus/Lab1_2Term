@@ -10,19 +10,24 @@
 class Triangle : public Figure {
 private:
 
-    float angle_to_turn;
+
 
     void get_points();
 
 protected:
     Point a,b,c;
+    float angle_to_turn = atan(1)*2;
 public:
-    void get_angle();
-    void set_triangle();
+    void set_angle(double ang);
+    //void set_triangle();
+    Triangle();
+    Triangle(Point pa,Point pb, Point pc);
 
 public:
-
+    void print_coordinates();
     void turn_right();
+    void to_feature();
+
 };
 
 

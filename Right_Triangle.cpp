@@ -38,3 +38,9 @@ Right_Triangle::Right_Triangle(Point pa, Point pb) {
     ab.turn_right(ang);
     c = ab.get_second_point(a);
 }
+
+void Right_Triangle::to_feature() {
+    print_outer_circle();
+    cout << endl;
+    Triangle::to_feature();
+}

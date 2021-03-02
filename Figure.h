@@ -6,9 +6,10 @@
 #define LAB1_2TERM_FIGURE_H
 
 #include "Vector.h"
+
 class Figure {
 public:
-    void to_feature();
+    virtual void to_feature() = 0;
 };
 
 

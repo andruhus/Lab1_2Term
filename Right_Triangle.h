@@ -12,6 +12,7 @@ public:
     Right_Triangle(Point pa,Point pb);
     Point get_centroid();
     void print_outer_circle();
+    void to_feature();
 };
 
 
